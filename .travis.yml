@@ -6,8 +6,35 @@ install:
 - pip install coveralls
 script:
 - coverage run --source=test setup.py test
+env:
+  global:
+    - GIT_TAG="Commit Travis CI build # $TRAVIS_BUILD_NUMBER ."
+    - secure: "aVRUKBWxWt6Ts9FVAMdkBqkyKrChWjPNExmKfdcPlOkW9izUNTk5ee17NcxTnvV05lzlGD+hegr4gJpaztX3syoZmSDT4skgyVS9hMmtKUIoFJnVVgngN0CvhQdfK9vG/0OJYpLCbQz6iV8TiRDDjpsWH2Ix77xB4tg19SVdeSJvdYE7aVcRcBC0fXzKoF6PpDYpswcZrYLEv81SLHF7cMwiBS+Ptw2Rakxj8ZCdezwPy4+L722VodjeL49Ezx+2oENuR7COzff8527s78IPZQTFu/TxMOcolM5qXn/0oODi8JWE6S2agt3rbRwjp2UaJB41X9yL4d7hvh/CYXkXVf4DGCgcaq0kK5kE5qjMECUk0uNoAMB5W2AZ8T86xXqowyYkvwZseLd/+x+PSuLfHmAyiAH8ZXeefr7DTm4qJLfRxXn/Sh3TJ40JI5imVn3vbsHn6J/scoIKs5brgRUb//jYDMDCHPX6XqnWfnrVM8ou4sl4t364IHHFwiWQJUJed0NATpaxmW5q0IJsEMq4wtkCVH0QitTofouUnzh4P/OEDF8eDwVNJd1E9Az+XcHRZUjmaTyh0rFfcuXksz5ZdbMGYD+FuHwyZnZ3l2xOEs8zcLzh/8Fl4CO3evPtPTVpDSe+Ohf0PV8dLEDBF47+RCU9d5latMks2V/AnIxupLk="
 after_success:
 - coveralls
+before_deploy:
+  # create deploy data
+  - mkdir -p packages
+  - echo "build $TRAVIS_BUILD_NUMBER" >> packages/number.txt
+  - tar czf packages/releases-$GIT_TAG.tar.gz $(ls -I packages)
+  - zip -q packages/releases-$GIT_TAG.zip -r $(ls -I packages)
+  # push to git
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "ideuchi@gmail.com"
+  - git tag $GIT_TAG -a -m "Commit from Travis CI for build $TRAVIS_BUILD_NUMBER"
+  - git push --quiet https://$GH_TOKEN@github.org/ideuchi/python-test.git --tags 2> /dev/null
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: "GsOJWfN+ox2KuTshubEp1Bkk5WivnxndhstWUaGIDdb9lzuzRI3FKZHNyGJvW7FFdWmDpPRNpXFXxFP0rdMeDiZTYRCKj2r7wLIsPOVz6jwh7tNssT1kV8r0ae3D8m2r0LnDklNX2wdSSFKYejCv1NW9Vv2DWhaqYlZAw/iHehDeoRJBcipmfG0873dcH1ai5PrQIUtdAE5RcUR0WdC1VlD2WNrARmzHHSbzv4gmWHK4+mc5LihppEa4yNOghzneOHjf/MxmumCnQFpTzPRPUYUNA0RtrCGjLu9lho0d9LrNHhee4RmNk8gSpBBeJSQB9YwnZBNzEbRCvbt+gmFL5+xTLCrn5h1ZZpvBFb+kvWR5G+GrOvgsvwHs/c5drcILRkyNTGhtQ87M5jA4WhUrNcbr1ZqQGzvcdvcdzMzQ4ESO12UcwIHMV4N1FUBDmr+zw8FHRc2LICuBQMCf/JLn8X1o5QM1RNKel7jWDri6rGzazzA1qV3PrvArMq39waAU0eY+BF/vnoRaoRsK+vERHwXaSPSl7kUxiLBYq4E7Ka1pRSRJOrbPKC7aTGkfn1u51wSvYvBLsY24b51eFX4IaWGKL/3Tz32RfExMm0n0OXw5fayYBWtMwgYKJ6UX7//8bOs48sfxSfDG2ht0chpaJSB8ZRcfnbH5tz7cSRhUssQ="
+  file:
+    - packages/releases-$GIT_TAG.tar.gz
+    - packages/releases-$GIT_TAG.zip
+  on:
+    tags: false
+    branch: master
+    condition: "other conditions"
 notifications:
   slack:
     secure: ffI3t/tNZkLXBy32wRalJtQAsXbZd5wmybFxC7R2AyuwHVVT6Qi1odYig6xGcyRUMcChrrLXiQxVfVaGcmbpcnJCJtDbqT6Bt4IGv1v/96RvL3x0HOQ5xzBa2QprtTbYpKERgcdW65WTLx6lW+CnvUbFTOW2eZhTl6RuGWYMuv9gPzHDO+lCP9lSYbZ21tRdtlyEMMk5NHIHcb0j8slgh1IP8g/L8cgyGaj+iXclgLe7wnIn3Nh2uO0vLPlbF1a9UAYSo/V+1U34kKyv9KOtscG8zvTHcS+rgRJa2axS1m9GpM/qgZaDXiylyNBKzWJe30++vocQVDa2u4Gi2ReLVWXNHCIkQbO2Ib4TXn6DSQPDlgJpX3trg13asByx9Y6W1DZ0264t82A9rqLfWMl4mGwgBFpewYpFFDiw2T5c5iwNYe0q5s0zmDDbuy4AQJih8wtSh2pNECGi2ZH6z4ihAzCB7X43woXO6YzdZLQqAUjmo7US7HLeVK6KfqYFXVayAddho9l+b6B6law8+igwYzBsTC4YEMSxmk5R1z6N/WU5xgBECSq06H0KlIHJowng8PHQTryVUG/ceovdh5m1m9vSOqU0LsA1htPvvXZmaEC58jq1BxnftCGX9TZNR3YvBWB8D0SHjOHVTZjRucfqrzK4h98mUZNAw5vXG74sMlA=
