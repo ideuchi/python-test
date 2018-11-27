@@ -14,6 +14,7 @@ class HogeTest(unittest.TestCase):
 	def test_hoge(self):
 		hoge = Hoge()
 		self.assertTrue(hoge.index())
+		self.assertTrue(hoge.index())
 
 def suite():
 	suite = unittest.TestSuite()
