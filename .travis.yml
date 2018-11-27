@@ -14,5 +14,5 @@ after_success:
  - coveralls
 
 notifications:
- slack: 'ideuchi:xoxp-341994756375-340247715712-340989358162-fbdc0667953105b687a310056287f140#development'
+ slack: 'ideuchi:xoxp-341994756375-340247715712-489667153175-de41f6985fa5ff9c1e86ef629597d771#development'
 

@@ -9,6 +9,6 @@ setup(
 	version = '0.1',
 	description = 'This is test codes for travis ci',
 	packages = find_packages(),
-	test_suite = 'hoge_test.suite'
+	test_suite = 'test.suite'
 )
 
