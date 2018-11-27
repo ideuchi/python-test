@@ -1,18 +1,13 @@
 language: python
-
 python:
- - 3.3
- - 3.4
-
+- 3.3
+- 3.4
 install:
- - pip install coveralls
-
+- pip install coveralls
 script:
- - coverage run --source=test setup.py test
-
+- coverage run --source=test setup.py test
 after_success:
- - coveralls
-
+- coveralls
 notifications:
- slack: 'ideuchi:xoxp-341994756375-340247715712-489667153175-de41f6985fa5ff9c1e86ef629597d771#development'
-
+  slack:
+    secure: ffI3t/tNZkLXBy32wRalJtQAsXbZd5wmybFxC7R2AyuwHVVT6Qi1odYig6xGcyRUMcChrrLXiQxVfVaGcmbpcnJCJtDbqT6Bt4IGv1v/96RvL3x0HOQ5xzBa2QprtTbYpKERgcdW65WTLx6lW+CnvUbFTOW2eZhTl6RuGWYMuv9gPzHDO+lCP9lSYbZ21tRdtlyEMMk5NHIHcb0j8slgh1IP8g/L8cgyGaj+iXclgLe7wnIn3Nh2uO0vLPlbF1a9UAYSo/V+1U34kKyv9KOtscG8zvTHcS+rgRJa2axS1m9GpM/qgZaDXiylyNBKzWJe30++vocQVDa2u4Gi2ReLVWXNHCIkQbO2Ib4TXn6DSQPDlgJpX3trg13asByx9Y6W1DZ0264t82A9rqLfWMl4mGwgBFpewYpFFDiw2T5c5iwNYe0q5s0zmDDbuy4AQJih8wtSh2pNECGi2ZH6z4ihAzCB7X43woXO6YzdZLQqAUjmo7US7HLeVK6KfqYFXVayAddho9l+b6B6law8+igwYzBsTC4YEMSxmk5R1z6N/WU5xgBECSq06H0KlIHJowng8PHQTryVUG/ceovdh5m1m9vSOqU0LsA1htPvvXZmaEC58jq1BxnftCGX9TZNR3YvBWB8D0SHjOHVTZjRucfqrzK4h98mUZNAw5vXG74sMlA=
