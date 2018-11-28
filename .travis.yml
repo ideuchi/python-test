@@ -13,9 +13,9 @@ after_success:
   - coveralls
   # create deploy data
   - mkdir -p packages
-  - echo "build $TRAVIS_BUILD_NUMBER" >> packages/number.txt
-  - tar czf packages/releases-$GIT_TAG.tar.gz $(ls -I packages)
-  - zip -q packages/releases-$GIT_TAG.zip -r $(ls -I packages)
+  - echo "Travis CI build # $TRAVIS_BUILD_NUMBER" >> packages/number.txt
+  - tar czf packages/releases-$TRAVIS_BUILD_NUMBER.tar.gz $(ls -I packages)
+  - zip -q packages/releases-$TRAVIS_BUILD_NUMBER.zip -r $(ls -I packages)
   # push to git
   - git config --global user.name "Travis CI"
   - git config --global user.email "ideuchi@gmail.com"
