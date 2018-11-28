@@ -21,7 +21,7 @@ after_success:
   - git config --global user.email "ideuchi@gmail.com"
   - git add -A
   - git commit -m "Commit from Travis CI for build $TRAVIS_BUILD_NUMBER"
-  - git push --quiet https://$GH_TOKEN@github.org/ideuchi/python-test.git
+  - git push https://$GH_TOKEN@github.org/ideuchi/python-test.git HEAD:master
 notifications:
   slack:
     secure: ffI3t/tNZkLXBy32wRalJtQAsXbZd5wmybFxC7R2AyuwHVVT6Qi1odYig6xGcyRUMcChrrLXiQxVfVaGcmbpcnJCJtDbqT6Bt4IGv1v/96RvL3x0HOQ5xzBa2QprtTbYpKERgcdW65WTLx6lW+CnvUbFTOW2eZhTl6RuGWYMuv9gPzHDO+lCP9lSYbZ21tRdtlyEMMk5NHIHcb0j8slgh1IP8g/L8cgyGaj+iXclgLe7wnIn3Nh2uO0vLPlbF1a9UAYSo/V+1U34kKyv9KOtscG8zvTHcS+rgRJa2axS1m9GpM/qgZaDXiylyNBKzWJe30++vocQVDa2u4Gi2ReLVWXNHCIkQbO2Ib4TXn6DSQPDlgJpX3trg13asByx9Y6W1DZ0264t82A9rqLfWMl4mGwgBFpewYpFFDiw2T5c5iwNYe0q5s0zmDDbuy4AQJih8wtSh2pNECGi2ZH6z4ihAzCB7X43woXO6YzdZLQqAUjmo7US7HLeVK6KfqYFXVayAddho9l+b6B6law8+igwYzBsTC4YEMSxmk5R1z6N/WU5xgBECSq06H0KlIHJowng8PHQTryVUG/ceovdh5m1m9vSOqU0LsA1htPvvXZmaEC58jq1BxnftCGX9TZNR3YvBWB8D0SHjOHVTZjRucfqrzK4h98mUZNAw5vXG74sMlA=
