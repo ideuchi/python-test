@@ -1,0 +1,6 @@
+README.md
+setup.py
+Hoge.egg-info/PKG-INFO
+Hoge.egg-info/SOURCES.txt
+Hoge.egg-info/dependency_links.txt
+Hoge.egg-info/top_level.txt
