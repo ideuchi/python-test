@@ -1,6 +1,7 @@
 #!/bin/sh
 
 CURDIR=`dirname $0`
+echo "current dir = " ${CURDIR}
 cd ${CURDIR}
 
 # build C++ primitiv
@@ -13,8 +14,8 @@ make
 sudo make install
 cd ../..
 
-# symlink header file
-ln -s ${CURDIR}/primitiv-develop/primitiv/core/shape.h ${CURDIR}/primitiv-develop/primitiv/shape.h
+# create symlink shape header file
+sudo ln -s /usr/local/include/primitiv/core/shape.h /usr/local/include/primitiv/shape.h
 
 # build Python3 primitiv
 pip3 install numpy cython cmake scikit-build
