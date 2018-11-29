@@ -10,6 +10,7 @@ cd build
 cmake ..
 make
 sudo make install
+cd ../..
 
 # build Python3 primitiv
 pip3 install numpy cython cmake scikit-build
