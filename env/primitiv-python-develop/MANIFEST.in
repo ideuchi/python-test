@@ -1,0 +1,2 @@
+include README.md package_description.rst primitiv/py_optimizer.h
+recursive-include primitiv *.pyx *.pxd
