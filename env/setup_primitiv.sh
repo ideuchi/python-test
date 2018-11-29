@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd `dirname $0`
+
 # build C++ primitiv
 unzip primitiv-develop.zip
 cd primitiv-develop
