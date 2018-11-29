@@ -17,6 +17,7 @@ cd ../..
 # create symlink shape header file
 sudo ln -s /usr/local/include/primitiv/core/shape.h /usr/local/include/primitiv/shape.h
 sudo ln -s /usr/local/include/primitiv/core/device.h /usr/local/include/primitiv/device.h
+sudo ln -s /usr/local/include/primitiv/core/tensor.h /usr/local/include/primitiv/tensor.h
 
 # build Python3 primitiv
 pip3 install numpy cython cmake scikit-build
