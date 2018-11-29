@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd `dirname $0`
+CURDIR=`dirname $0`
+cd ${CURDIR}
 
 # build C++ primitiv
 unzip -qo primitiv-develop.zip
@@ -11,6 +12,9 @@ cmake ..
 make
 sudo make install
 cd ../..
+
+# symlink header file
+ln -s ${CURDIR}/primitiv-develop/primitiv/core/shape.h ${CURDIR}/primitiv-develop/primitiv/shape.h
 
 # build Python3 primitiv
 pip3 install numpy cython cmake scikit-build
