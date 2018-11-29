@@ -19,6 +19,7 @@ sudo ln -s /usr/local/include/primitiv/core/shape.h /usr/local/include/primitiv/
 sudo ln -s /usr/local/include/primitiv/core/device.h /usr/local/include/primitiv/device.h
 sudo ln -s /usr/local/include/primitiv/core/tensor.h /usr/local/include/primitiv/tensor.h
 sudo ln -s /usr/local/include/primitiv/core/graph.h /usr/local/include/primitiv/graph.h
+sudo ln -s /usr/local/include/primitiv/core/initializer.h /usr/local/include/primitiv/initializer.h
 
 # build Python3 primitiv
 pip3 install numpy cython cmake scikit-build
