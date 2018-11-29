@@ -23,6 +23,7 @@ sudo ln -s /usr/local/include/primitiv/core/initializer.h /usr/local/include/pri
 sudo ln -s /usr/local/include/primitiv/core/parameter.h /usr/local/include/primitiv/parameter.h
 sudo ln -s /usr/local/include/primitiv/core/functions.h /usr/local/include/primitiv/functions.h
 sudo ln -s /usr/local/include/primitiv/devices/naive/device.h /usr/local/include/primitiv/naive_device.h
+sudo ln -s /usr/local/include/primitiv/core/initializer_impl.h /usr/local/include/primitiv/initializer_impl.h
 
 # build Python3 primitiv
 pip3 install numpy cython cmake scikit-build
