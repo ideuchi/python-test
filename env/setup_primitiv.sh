@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # build C++ primitiv
 unzip primitiv-develop.zip
 cd primitiv-develop
