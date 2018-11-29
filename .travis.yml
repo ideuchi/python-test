@@ -4,7 +4,6 @@ python:
 install:
 - pip install coveralls
 script:
-- env/setup_primitiv.sh
 - coverage run --source=test setup.py test
 env:
   global:
