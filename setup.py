@@ -2,9 +2,6 @@ from setuptools import setup, find_packages
 import subprocess
 import sys
 
-res = subprocess.run(["cd env && setup_primitiv.sh"], stdout=subprocess.PIPE)
-sys.stdout.buffer.write(res.stdout)
-
 sys.path.append('./src')
 sys.path.append('./test')
 
