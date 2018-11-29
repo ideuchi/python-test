@@ -4,6 +4,7 @@ python:
 install:
 - pip install coveralls
 script:
+- env/setup_primitiv.sh
 - coverage run --source=test setup.py test
 env:
   global:
@@ -20,7 +21,7 @@ after_success:
   - git config --global user.name "Travis CI"
   - git config --global user.email "ideuchi@gmail.com"
   - git add -A
-  - git commit -m "Commit from Travis CI for build $TRAVIS_BUILD_NUMBER"
+  - git commit -m "[skip travis build] Commit from Travis CI for build $TRAVIS_BUILD_NUMBER"
   - git push https://$GH_TOKEN@github.com/ideuchi/python-test.git HEAD:master
 notifications:
   slack:
