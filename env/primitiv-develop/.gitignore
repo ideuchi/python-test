@@ -1,0 +1,8 @@
+*.swp
+/build
+/docs/build
+/docs/doxygen/*
+/examples/*/a.out
+/examples/*/*.config
+/examples/*/*.param
+/examples/*/data
