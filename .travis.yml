@@ -3,7 +3,7 @@ python:
 - 3.5
 install:
 - pip install coveralls
-- env/setup_primitiv.sh
+- sudo env/setup_primitiv.sh
 script:
 - coverage run --source=test setup.py test
 env:
