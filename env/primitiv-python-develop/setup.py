@@ -87,7 +87,6 @@ def ext_common_args(*args, libraries=[], **kwargs):
         libs.extend(libraries)
         return Extension(
             *args,
-            **kwargs,
             language="c++",
             libraries=libs,
             library_dirs=[os.path.join(skbuild.constants.CMAKE_INSTALL_DIR, "lib")],
@@ -101,7 +100,6 @@ def ext_common_args(*args, libraries=[], **kwargs):
     else:
         return Extension(
             *args,
-            **kwargs,
             language="c++",
             libraries=["primitiv"],
             include_dirs=[
