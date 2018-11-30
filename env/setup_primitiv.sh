@@ -33,7 +33,7 @@ pip3 install numpy cython cmake scikit-build
 unzip -qo primitiv-python-develop.zip
 cd primitiv-python-develop
 sed -i -e "s/\*args, \*\*kwargs,/\*args,/g" setup.py
-sed -i -e "s/extra_compile_args=\[\"-std=c\+\+11\"\],\n        \)/extra_compile_args=\[\"-std=c\+\+11\"\],\n            \*\*kwargs,\n        \)/g" setup.py
+sed -i -e "s/extra_compile_args=\[\"-std=c\+\+11\"\],\\\\n        \)/extra_compile_args=\[\"-std=c\+\+11\"\],\n            \*\*kwargs,\n        \)/g" setup.py
 python3 ./setup.py build
 sudo python3 ./setup.py install
 
