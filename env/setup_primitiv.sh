@@ -27,12 +27,12 @@ sudo ln -s /usr/local/include/primitiv/core/initializer_impl.h /usr/local/includ
 sudo ln -s /usr/local/include/primitiv/core/model.h /usr/local/include/primitiv/model.h
 sudo ln -s /usr/local/include/primitiv/core/optimizer.h /usr/local/include/primitiv/optimizer.h
 sudo ln -s /usr/local/include/primitiv/core/optimizer_impl.h /usr/local/include/primitiv/optimizer_impl.h
-sed -e "s/*args, **kwargs/*args,\n            **kwargs/g"
 
 # build Python3 primitiv
 pip3 install numpy cython cmake scikit-build
 unzip -qo primitiv-python-develop.zip
 cd primitiv-python-develop
+sed -i -e "s/*args, **kwargs/*args,\n            **kwargs/g" setup.py
 python3 ./setup.py build
 sudo python3 ./setup.py install
 
