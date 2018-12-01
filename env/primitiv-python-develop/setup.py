@@ -240,5 +240,5 @@ setup(
         "cython",
         "numpy",
     ],
-    **setup_kwargs,
+    **setup_kwargs
 )
