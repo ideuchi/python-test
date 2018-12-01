@@ -37,9 +37,9 @@ sed -i -e "s/\*args, \*\*kwargs,/\*args,/g" setup.py
 sed -i -e 's/extra_compile_args=\["-std=c++11"\],/extra_compile_args=\["-std=c++11"\], \*\*kwargs/g' setup.py
 sed -i -e 's/setup_kwargs,/setup_kwargs/g' setup.py
 python3 ./setup.py build
-echo "=====build end.====="
-sudo python3 ./setup.py install
-echo "=====install end.====="
+echo "=====Python3 primitiv build end.====="
+python3 ./setup.py install
+echo "=====Python3 primitiv install end.====="
 
 return 0
 
