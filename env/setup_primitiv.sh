@@ -29,7 +29,8 @@ sudo ln -s /usr/local/include/primitiv/core/optimizer.h /usr/local/include/primi
 sudo ln -s /usr/local/include/primitiv/core/optimizer_impl.h /usr/local/include/primitiv/optimizer_impl.h
 
 # build Python3 primitiv
-pip3 install numpy cython cmake scikit-build setuptools
+pip3 install numpy cython cmake scikit-build
+pip3 install --upgrade setuptools
 unzip -qo primitiv-python-develop.zip
 cd primitiv-python-develop
 sed -i -e "s/\*args, \*\*kwargs,/\*args,/g" setup.py
