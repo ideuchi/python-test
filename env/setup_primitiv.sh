@@ -29,13 +29,12 @@ sudo ln -s /usr/local/include/primitiv/core/optimizer.h /usr/local/include/primi
 sudo ln -s /usr/local/include/primitiv/core/optimizer_impl.h /usr/local/include/primitiv/optimizer_impl.h
 
 # build Python3 primitiv
-pip3 install numpy cython cmake scikit-build
+pip3 install numpy cython cmake scikit-build setuptools
 unzip -qo primitiv-python-develop.zip
 cd primitiv-python-develop
 sed -i -e "s/\*args, \*\*kwargs,/\*args,/g" setup.py
 sed -i -e 's/extra_compile_args=\["-std=c++11"\],/extra_compile_args=\["-std=c++11"\], \*\*kwargs/g' setup.py
 sed -i -e 's/setup_kwargs,/setup_kwargs/g' setup.py
-sudo apt-get install python3-setuptools
 python3 ./setup.py build
 sudo python3 ./setup.py install
 
