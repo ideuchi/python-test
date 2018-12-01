@@ -34,6 +34,7 @@ unzip -qo primitiv-python-develop.zip
 cd primitiv-python-develop
 sed -i -e "s/\*args, \*\*kwargs,/\*args,/g" setup.py
 sed -i -e 's/extra_compile_args=\["-std=c++11"\],/extra_compile_args=\["-std=c++11"\], \*\*kwargs/g' setup.py
+sed -i -e 's/setup_kwargs,/setup_kwargs/g' setup.py
 python3 ./setup.py build
 sudo python3 ./setup.py install
 
