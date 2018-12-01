@@ -95,7 +95,7 @@ def ext_common_args(*args, libraries=[], **kwargs):
                 os.path.join(skbuild.constants.CMAKE_INSTALL_DIR, "include"),
                 os.path.join(dirname, "primitiv"),
             ],
-            extra_compile_args=["-std=c++11"], **kwargs,
+            extra_compile_args=["-std=c++11"], **kwargs
         )
     else:
         return Extension(
@@ -106,7 +106,7 @@ def ext_common_args(*args, libraries=[], **kwargs):
                 np.get_include(),
                 os.path.join(dirname, "primitiv"),
             ],
-            extra_compile_args=["-std=c++11"], **kwargs,
+            extra_compile_args=["-std=c++11"], **kwargs
         )
 
 
