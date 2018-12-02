@@ -40,7 +40,7 @@ python3 ./setup.py build
 echo "=====Python3 primitiv build end.====="
 python3 ./setup.py install
 echo "=====Python3 primitiv install end.====="
-find / -name libprimitiv.so
+#find / -name libprimitiv.so
 
 return 0
 

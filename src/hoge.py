@@ -1,5 +1,8 @@
 # coding utf-8
 
+sys.path
+sys.path.append('/usr/local/lib')
+
 import numpy as np
 from primitiv import *
 from primitiv import devices as D
