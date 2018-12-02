@@ -1,5 +1,7 @@
 # coding utf-8
 
+import sys
+
 sys.path
 sys.path.append('/usr/local/lib')
 
