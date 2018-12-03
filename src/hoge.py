@@ -8,7 +8,7 @@ from primitiv import initializers as I
 from primitiv import optimizers as O
 
 class Hoge:
-	dev = d.Naive()
+	dev = D.Naive()
 	Device.set_default(dev)
 	g = Graph()
 	Graph.set_default(g)
