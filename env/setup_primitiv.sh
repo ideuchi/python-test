@@ -47,7 +47,7 @@ echo "after LD_LIBRARY_PATH:" ${LD_LIBRARY_PATH}
 echo "before LD_RUN_PATH:" ${LD_RUN_PATH}
 export LD_RUN_PATH=/usr/local/lib:${LD_RUN_PATH}
 echo "after LD_RUN_PATH:" ${LD_RUN_PATH}
-ldconfig
+sudo ldconfig
 
 return 0
 
