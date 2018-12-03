@@ -40,9 +40,14 @@ python3 ./setup.py build
 echo "=====Python3 primitiv build end.====="
 python3 ./setup.py install
 echo "=====Python3 primitiv install end.====="
-find / -name libprimitiv.so
-echo "LD_LIBRARY_PATH:" ${LD_LIBRARY_PATH}
+#find / -name libprimitiv.so
+echo "before LD_LIBRARY_PATH:" ${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+echo "after LD_LIBRARY_PATH:" ${LD_LIBRARY_PATH}
+echo "before LD_RUN_PATH:" ${LD_RUN_PATH}
+export LD_RUN_PATH=/usr/local/lib:${LD_RUN_PATH}
+echo "after LD_RUN_PATH:" ${LD_RUN_PATH}
+ldconfig
 
 return 0
 
