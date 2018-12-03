@@ -16,8 +16,15 @@ class Hoge:
 	def index(self):
 		return True
 
-	def primitiv_init(self):
+	def primitiv_test1(self):
 		x = F.input(np.array([[1], [2], [3]]))
 		y = 2 * x + 3
 		return y.to_list()
+
+	def primitiv_test2(self):
+		x = F.input(np.array([[1], [2]]))
+		a = F.input(np.array([[1, 2], [1, 2]]))
+		y = F.matmul(a, x)
+		return y.to_list()
+
 
