@@ -18,20 +18,17 @@ class Hoge:
 		return True
 
 	def primitiv_test1(self):
-		primitiv_init()
 		x = F.input(np.array([[1], [2], [3]]))
 		y = 2 * x + 3
 		return y.to_list()
 
 	def primitiv_test2(self):
-		primitiv_init()
 		x = F.input(np.array([[1], [2]]))
 		a = F.input(np.array([[1, 2], [1, 2]]))
 		y = F.matmul(a, x)
 		return y.to_list()
 
 	def primitiv_xor_test(self):
-		primitiv_init()
 		input_data = [
 			np.array([[ 1], [ 1]]),
 			np.array([[-1], [ 1]]),
