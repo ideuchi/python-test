@@ -23,10 +23,10 @@ install_primitiv_core() {
 }
 
 if [ -d primitiv-develop/build ]; then
-	install_primitiv_core()
+	install_primitiv_core
 else
-	build_primitiv_core()
-	install_primitiv_core()
+	build_primitiv_core
+	install_primitiv_core
 fi
 
 # create symlink shape header file
