@@ -46,7 +46,7 @@ class Hoge:
 		pw = Parameter([1, N], I.XavierUniform())
 		pb = Parameter([],     I.Constant(0))
 		pu = Parameter([N, 2], I.XavierUniform())
-		pc = Parameter{[N],    I.Constant(0))
+		pc = Parameter([N],    I.Constant(0))
 
 		optimizer = O.SGD(0.5)
 		optimizer.add(pw, pb, pu, pc)
