@@ -5,14 +5,29 @@ echo "current dir = " ${CURDIR}
 cd ${CURDIR}
 
 # build C++ primitiv
-unzip -qo primitiv-develop.zip
-cd primitiv-develop
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-cd ../..
+build_primitiv_core() {
+	cd ${CURDIR}
+	unzip -qo primitiv-develop.zip
+	cd primitiv-develop
+	mkdir build
+	cd build
+	cmake ..
+	make
+	cd ${CURDIR}
+}
+
+install_primitiv_core() {
+	cd primitiv-develop/build
+	sudo make install
+	cd ../..
+}
+
+if [ -d primitiv-develop/build ]; then
+	install_primitiv_core()
+else
+	build_primitiv_core()
+	install_primitiv_core()
+fi
 
 # create symlink shape header file
 sudo ln -s /usr/local/include/primitiv/core/shape.h /usr/local/include/primitiv/shape.h
