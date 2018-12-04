@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 CURDIR=`dirname $0`
 echo "current dir = " ${CURDIR}
