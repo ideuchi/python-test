@@ -8,11 +8,6 @@ from primitiv import initializers as I
 from primitiv import optimizers as O
 
 class Hoge:
-	dev = D.Naive()
-	Device.set_default(dev)
-	g = Graph()
-	Graph.set_default(g)
-
 	def index(self):
 		return True
 
@@ -28,6 +23,11 @@ class Hoge:
 		return y.to_list()
 
 	def primitiv_xor_test(self):
+		dev = D.Naive()
+		Device.set_default(dev)
+		g = Graph()
+		Graph.set_default(g)
+
 		input_data = [
 			np.array([[ 1], [ 1]]),
 			np.array([[-1], [ 1]]),
