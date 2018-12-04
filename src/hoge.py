@@ -23,7 +23,7 @@ class Hoge:
 		return y.to_list()
 
 	def primitiv_xor_test(self):
-		dev = D.Naive()
+		dev = D.Naive(0)
 		Device.set_default(dev)
 		g = Graph()
 		Graph.set_default(g)
