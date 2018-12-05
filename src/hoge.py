@@ -62,7 +62,7 @@ class Hoge:
         optimizer.add(pw, pb, pu, pc)
 
         for epoch in range(20):
-        print(epoch, end=' ')
+            print(epoch, end=' ')
 
         g.clear()
 
@@ -84,18 +84,18 @@ class Hoge:
 
         return y.to_list()
 
-	def build_graph():
-		x = F.input(input_data)
-		w = F.parameter(pw)
-		b = F.parameter(pb)
-		u = F.parameter(pu)
-		c = F.parameter(pc)
-		h = F.tanh(u @ x + c)
-		return F.tanh(w @ h + b)
+    def build_graph():
+        x = F.input(input_data)
+        w = F.parameter(pw)
+        b = F.parameter(pb)
+        u = F.parameter(pu)
+        c = F.parameter(pc)
+        h = F.tanh(u @ x + c)
+        return F.tanh(w @ h + b)
 
-	def calc_loss(y):
-		t = F.input(label_data)
-		diff = y - t
-		return F.batch.mean(diff * diff)
+    def calc_loss(y):
+        t = F.input(label_data)
+        diff = y - t
+        return F.batch.mean(diff * diff)
 
 
