@@ -32,6 +32,20 @@ class Hoge:
         y = F.matmul(a, x)
         return y.to_list()
 
+    def build_graph():
+        x = F.input(input_data)
+        w = F.parameter(pw)
+        b = F.parameter(pb)
+        u = F.parameter(pu)
+        c = F.parameter(pc)
+        h = F.tanh(u @ x + c)
+        return F.tanh(w @ h + b)
+
+    def calc_loss(y):
+        t = F.input(label_data)
+        diff = y - t
+        return F.batch.mean(diff * diff)
+
     def primitiv_xor_test(self):
         dev = D.Naive()
         Device.set_default(dev)
@@ -83,19 +97,4 @@ class Hoge:
         pc.save('pc.data')
 
         return y.to_list()
-
-    def build_graph():
-        x = F.input(input_data)
-        w = F.parameter(pw)
-        b = F.parameter(pb)
-        u = F.parameter(pu)
-        c = F.parameter(pc)
-        h = F.tanh(u @ x + c)
-        return F.tanh(w @ h + b)
-
-    def calc_loss(y):
-        t = F.input(label_data)
-        diff = y - t
-        return F.batch.mean(diff * diff)
-
 

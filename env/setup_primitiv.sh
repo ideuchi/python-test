@@ -65,4 +65,3 @@ echo "after LD_RUN_PATH:" ${LD_RUN_PATH}
 sudo ldconfig
 
 return 0
-
