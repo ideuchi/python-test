@@ -80,11 +80,11 @@ class Hoge:
 
         g.clear()
 
-        y = build_graph()
+        y = self.build_graph()
         for val in y.to_list():
             print('{:+.6f},'.format(val), end=' ')
 
-            loss = calc_loss(y)
+            loss = self.calc_loss(y)
             print('loss={:.6f}'.format(loss.to_float()))
 
             optimizer.reset_gradients()
