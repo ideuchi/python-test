@@ -32,7 +32,7 @@ class Hoge:
         y = F.matmul(a, x)
         return y.to_list()
 
-    def build_graph(self):
+    def build_graph(self, input_data):
         x = F.input(input_data)
         w = F.parameter(pw)
         b = F.parameter(pb)
@@ -80,7 +80,7 @@ class Hoge:
 
         g.clear()
 
-        y = self.build_graph()
+        y = self.build_graph(input_data)
         for val in y.to_list():
             print('{:+.6f},'.format(val), end=' ')
 
