@@ -32,7 +32,7 @@ class Hoge:
         y = F.matmul(a, x)
         return y.to_list()
 
-    def build_graph():
+    def build_graph(self):
         x = F.input(input_data)
         w = F.parameter(pw)
         b = F.parameter(pb)
@@ -41,7 +41,7 @@ class Hoge:
         h = F.tanh(u @ x + c)
         return F.tanh(w @ h + b)
 
-    def calc_loss(y):
+    def calc_loss(self, y):
         t = F.input(label_data)
         diff = y - t
         return F.batch.mean(diff * diff)
