@@ -4,6 +4,7 @@ python:
 install:
 - pip install coveralls
 - env/setup_primitiv.sh
+- mkdir -p output
 script:
 - coverage run --source=test setup.py test
 env:
@@ -15,8 +16,8 @@ after_success:
   # create deploy data
   - mkdir -p packages
   - echo "Travis CI build # $TRAVIS_BUILD_NUMBER" >> packages/number.txt
-  - tar czf packages/releases-$TRAVIS_BUILD_NUMBER.tar.gz $(ls -I packages)
-  - zip -q packages/releases-$TRAVIS_BUILD_NUMBER.zip -r $(ls -I packages)
+  - tar czf packages/releases-$TRAVIS_BUILD_NUMBER.tar.gz output/*
+  - zip -q packages/releases-$TRAVIS_BUILD_NUMBER.zip -r output/
   # push to git
   - git config --global user.name "Travis CI"
   - git config --global user.email "ideuchi@gmail.com"

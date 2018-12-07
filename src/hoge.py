@@ -89,10 +89,10 @@ class Hoge:
             loss.backward()
             optimizer.update()
 
-        pw.save('pw.data')
-        pb.save('pb.data')
-        pu.save('pu.data')
-        pc.save('pc.data')
+        pw.save('output/pw.data')
+        pb.save('output/pb.data')
+        pu.save('output/pu.data')
+        pc.save('output/pc.data')
 
         return y.to_list()
 
