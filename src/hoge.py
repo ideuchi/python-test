@@ -62,7 +62,6 @@ class Hoge:
         pb = Parameter([],     I.Constant(0))
         pu = Parameter([N, 2], I.XavierUniform())
         pc = Parameter([N],    I.Constant(0))
-        h = F.tanh(u @ x + c)
 
         optimizer = O.SGD(0.5)
         optimizer.add(pw, pb, pu, pc)
@@ -77,6 +76,7 @@ class Hoge:
         b = F.parameter(pb)
         u = F.parameter(pu)
         c = F.parameter(pc)
+        h = F.tanh(u @ x + c)
         y = F.tanh(w @ h + b)
 
         for val in y.to_list():
