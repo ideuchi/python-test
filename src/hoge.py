@@ -63,11 +63,11 @@ class Hoge:
         pb = Parameter([],     I.Constant(0))
         pu = Parameter([N, 2], I.XavierUniform())
         pc = Parameter([N],    I.Constant(0))
-        if os.path.isfile('output/pw.data') and os.path.isfile('output/pb.data') and os.path.isfile('output/pu.data') and os.path.isfile('output/pc.data'):
-            pw.load('output/pw.data')
-            pb.load('output/pb.data')
-            pu.load('output/pu.data')
-            pc.load('output/pc.data')
+        if os.path.isfile('output/xor/pw.data') and os.path.isfile('output/xor/pb.data') and os.path.isfile('output/xor/pu.data') and os.path.isfile('output/xor/pc.data'):
+            pw.load('output/xor/pw.data')
+            pb.load('output/xor/pb.data')
+            pu.load('output/xor/pu.data')
+            pc.load('output/xor/pc.data')
 
         optimizer = O.SGD(0.5)
         optimizer.add(pw, pb, pu, pc)
@@ -95,10 +95,10 @@ class Hoge:
             loss.backward()
             optimizer.update()
 
-        pw.save('output/pw.data')
-        pb.save('output/pb.data')
-        pu.save('output/pu.data')
-        pc.save('output/pc.data')
+        pw.save('output/xor/pw.data')
+        pb.save('output/xor/pb.data')
+        pu.save('output/xor/pu.data')
+        pc.save('output/xor/pc.data')
 
         return y.to_list()
 
