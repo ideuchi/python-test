@@ -17,7 +17,7 @@ class HogeTest(unittest.TestCase):
         self.assertEqual(hoge.primitiv_test1(), [5.0, 7.0, 9.0])
         self.assertEqual(hoge.primitiv_test2(), [5.0, 5.0])
         self.assertTrue(len(hoge.primitiv_xor_test()) == 4)
-        self.assertLess(hoge.primitiv_xor_test(), 1.5)
+        self.assertAlmostEqual(hoge.primitiv_xor_test(), [1.0, -1.0, -1.0, -1.0], places=2)
 
 def suite():
 	suite = unittest.TestSuite()
