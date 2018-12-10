@@ -1,5 +1,6 @@
 # coding utf-8
 
+import os
 import numpy as np
 from primitiv import *
 from primitiv import devices as D
@@ -62,6 +63,11 @@ class Hoge:
         pb = Parameter([],     I.Constant(0))
         pu = Parameter([N, 2], I.XavierUniform())
         pc = Parameter([N],    I.Constant(0))
+        if os.path.isfile('output/pw.data') and os.path.isfile('output/pb.data') and os.path.isfile('output/pu.data') and os.path.isfile('output/pc.data'):
+            pw.load('output/pw.data')
+            pb.load('output/pb.data')
+            pu.load('output/pu.data')
+            pc.load('output/pc.data')
 
         optimizer = O.SGD(0.5)
         optimizer.add(pw, pb, pu, pc)
