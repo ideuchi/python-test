@@ -75,18 +75,18 @@ class Hoge:
         for epoch in range(20):
             print(epoch, end=' ')
 
-        g.clear()
+            g.clear()
 
-        x = F.input(input_data)
-        w = F.parameter(pw)
-        b = F.parameter(pb)
-        u = F.parameter(pu)
-        c = F.parameter(pc)
-        h = F.tanh(u @ x + c)
-        y = F.tanh(w @ h + b)
+            x = F.input(input_data)
+            w = F.parameter(pw)
+            b = F.parameter(pb)
+            u = F.parameter(pu)
+            c = F.parameter(pc)
+            h = F.tanh(u @ x + c)
+            y = F.tanh(w @ h + b)
 
-        for val in y.to_list():
-            print('{:+.6f},'.format(val), end=' ')
+            for val in y.to_list():
+                print('{:+.6f},'.format(val), end=' ')
 
             loss = self.calc_loss(y, label_data)
             print('loss={:.6f}'.format(loss.to_float()))
