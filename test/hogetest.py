@@ -19,8 +19,8 @@ class HogeTest(unittest.TestCase):
         self.assertTrue(len(hoge.primitiv_xor_test()) == 4)
         self.assertAlmostEqual(hoge.primitiv_xor_test()[0],  1.0, places=1)
         self.assertAlmostEqual(hoge.primitiv_xor_test()[1], -1.0, places=1)
-        self.assertAlmostEqual(hoge.primitiv_xor_test()[2], -1.0, places=1)
-        self.assertAlmostEqual(hoge.primitiv_xor_test()[3], -1.0, places=1)
+        self.assertAlmostEqual(hoge.primitiv_xor_test()[2], -1.0, places=2)
+        self.assertAlmostEqual(hoge.primitiv_xor_test()[3], -1.0, places=2)
 
 def suite():
 	suite = unittest.TestSuite()
