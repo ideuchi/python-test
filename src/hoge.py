@@ -45,9 +45,9 @@ class Hoge:
         Graph.set_default(g)
 
         input_data = [
-        np.array([[ 1], [ 1]]),
-        np.array([[-1], [ 1]]),
-        np.array([[-1], [-1]]),
+            np.array([[ 1], [ 1]]),
+            np.array([[-1], [ 1]]),
+            np.array([[-1], [-1]]),
             np.array([[ 1], [-1]]),
         ]
 
