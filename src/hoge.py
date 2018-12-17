@@ -69,7 +69,7 @@ class Hoge:
             pu.load('output/xor/pu.data')
             pc.load('output/xor/pc.data')
 
-        optimizer = O.SGD(0.5)
+        optimizer = O.SGD(0.01)
         optimizer.add(pw, pb, pu, pc)
 
         for epoch in range(1000):
