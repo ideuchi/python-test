@@ -72,7 +72,7 @@ class Hoge:
         optimizer = O.SGD(0.5)
         optimizer.add(pw, pb, pu, pc)
 
-        for epoch in range(50):
+        for epoch in range(1000):
             print(epoch, end=' ')
 
             g.clear()
